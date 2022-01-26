@@ -62,7 +62,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/install/in
 
 ## Tệp cấu hình và hướng dẫn chi tiết
 
-[Hướng dẫn chi tiết](https://xrayr.aikocute.com/aikoxrayr/)
+[Hướng dẫn chi tiết](https://xrayr.aikocute.com)
 
 ## Thanks
 
@@ -70,11 +70,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/install/in
 * [V2Fly](https://github.com/v2fly)
 * [VNet-V2ray](https://github.com/ProxyPanel/VNet-V2ray)
 * [Air-Universe](https://github.com/crossfw/Air-Universe)
-
-## Licence
-
-[Mozilla Public License Version 2.0](https://github.com/XrayR-project/XrayR/blob/main/LICENSE)
-
+* [RmanLuo](https://github.com/RManLuo)
 ## Telgram
 
 [AikoTelegram](https://t.me/aikocutehotme)
@@ -85,5 +81,5 @@ TRX&(USDT-TRC20): THnoBdGW8W8tkCgATAbfTtEWV7jH3dz1dZ
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/XrayR-project/XrayR.svg)](https://starchart.cc/XrayR-project/XrayR)
+[![Stargazers over time](https://starchart.cc/AikoCute/XrayR.svg)](https://starchart.cc/AikoCute/XrayR)
 
