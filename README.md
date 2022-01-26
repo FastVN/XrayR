@@ -55,14 +55,14 @@ Dự án này chỉ mang tính chất học tập, phát triển và bảo trì 
 bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/install/install.sh)
 ```
 ### Triển khai phần mềm bằng Docker
-[Hướng dẫn triển khai Docker](https://AikoCute.gitbook.io/aikoxrayr/xrayr-xia-zai-he-an-zhuang/install/docker) < Tiếng Tàu Khựa>
+[Hướng dẫn triển khai Docker](https://xrayr.aikocute.com/aikoxrayr/xrayr-xia-zai-he-an-zhuang/install/docker) < Tiếng Tàu Khựa>
 
 ### Hướng dẫn cài đặt
-[Hướng dẫn cài đặt thủ công](https://AikoCute.gitbook.io/aikoxrayr/xrayr-xia-zai-he-an-zhuang/install/manual) < Tiếng Tàu Khựa>
+[Hướng dẫn cài đặt thủ công](https://xrayr.aikocute.com/aikoxrayr/xrayr-xia-zai-he-an-zhuang/install/manual) < Tiếng Tàu Khựa>
 
 ## Tệp cấu hình và hướng dẫn chi tiết
 
-[Hướng dẫn chi tiết](https://AikoCute.gitbook.io/aikoxrayr/)
+[Hướng dẫn chi tiết](https://xrayr.aikocute.com/aikoxrayr/)
 
 ## Thanks
 
