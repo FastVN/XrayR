@@ -28,18 +28,19 @@ var (
 
 // APIClient create a api client to the panel.
 type APIClient struct {
-	client           *resty.Client
-	APIHost          string
-	NodeID           int
-	Key              string
-	NodeType         string
-	EnableVless      bool
-	EnableXTLS       bool
-	SpeedLimit       float64
-	DeviceLimit      int
-	LocalRuleList    []api.DetectRule
-	LastReportOnline map[int]int
-	access           sync.Mutex
+	client              *resty.Client
+	APIHost             string
+	NodeID              int
+	Key                 string
+	NodeType            string
+	EnableVless         bool
+	EnableXTLS          bool
+	SpeedLimit          float64
+	DeviceLimit         int
+	DisableCustomConfig bool
+	LocalRuleList       []api.DetectRule
+	LastReportOnline    map[int]int
+	access              sync.Mutex
 }
 
 // New creat a api instance
@@ -59,7 +60,7 @@ func New(apiConfig *api.Config) *APIClient {
 			log.Print(v.Err)
 		}
 	})
-	client.SetHostURL(apiConfig.APIHost)
+	client.SetBaseURL(apiConfig.APIHost)
 	// Create Key for each requests
 	client.SetQueryParam("key", apiConfig.Key)
 	// Add support for muKey
@@ -68,17 +69,18 @@ func New(apiConfig *api.Config) *APIClient {
 	localRuleList := readLocalRuleList(apiConfig.RuleListPath)
 
 	return &APIClient{
-		client:           client,
-		NodeID:           apiConfig.NodeID,
-		Key:              apiConfig.Key,
-		APIHost:          apiConfig.APIHost,
-		NodeType:         apiConfig.NodeType,
-		EnableVless:      apiConfig.EnableVless,
-		EnableXTLS:       apiConfig.EnableXTLS,
-		SpeedLimit:       apiConfig.SpeedLimit,
-		DeviceLimit:      apiConfig.DeviceLimit,
-		LocalRuleList:    localRuleList,
-		LastReportOnline: make(map[int]int),
+		client:              client,
+		NodeID:              apiConfig.NodeID,
+		Key:                 apiConfig.Key,
+		APIHost:             apiConfig.APIHost,
+		NodeType:            apiConfig.NodeType,
+		EnableVless:         apiConfig.EnableVless,
+		EnableXTLS:          apiConfig.EnableXTLS,
+		SpeedLimit:          apiConfig.SpeedLimit,
+		DeviceLimit:         apiConfig.DeviceLimit,
+		LocalRuleList:       localRuleList,
+		DisableCustomConfig: apiConfig.DisableCustomConfig,
+		LastReportOnline:    make(map[int]int),
 	}
 }
 
@@ -169,8 +171,20 @@ func (c *APIClient) GetNodeInfo() (nodeInfo *api.NodeInfo, err error) {
 	}
 
 	// New sspanel API
-	if nodeInfoResponse.Version == "2021.11" {
+	disableCustomConfig := c.DisableCustomConfig
+	if nodeInfoResponse.Version == "2021.11" && !disableCustomConfig {
+		// Check if custom_config is empty
+		if configString, err := json.Marshal(nodeInfoResponse.CustomConfig); err != nil || string(configString) == "[]" {
+			log.Printf("custom_config is empty! take config from address now.")
+			disableCustomConfig = true
+		}
+	}
+	if !disableCustomConfig {
 		nodeInfo, err = c.ParseSSPanelNodeInfo(nodeInfoResponse)
+		if err != nil {
+			res, _ := json.Marshal(nodeInfoResponse)
+			return nil, fmt.Errorf("Parse node info failed: %s, \nError: %s, \nPlease check the doc of custom_config for help: https://crackair.gitbook.io/xrayr-project/dui-jie-sspanel/sspanel/sspanel_custom_config", string(res), err)
+		}
 	} else {
 		switch c.NodeType {
 		case "V2ray":
@@ -718,9 +732,6 @@ func (c *APIClient) ParseSSPanelNodeInfo(nodeInfoResponse *NodeInfoResponse) (*a
 
 	nodeConfig := new(CustomConfig)
 	json.Unmarshal(nodeInfoResponse.CustomConfig, nodeConfig)
-	if nodeConfig == nil {
-		return nil, fmt.Errorf("No custom config found")
-	}
 
 	if c.SpeedLimit > 0 {
 		speedlimit = uint64((c.SpeedLimit * 1000000) / 8)
