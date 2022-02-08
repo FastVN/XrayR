@@ -75,10 +75,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/
 
 [AikoTelegram](https://t.me/aikocutehotme)
 ## Donation
-ETH&(USDT-ERC20): 0xDbB76DDDaAef7F14e56Be96CF5cd477BBDA6FFd6
-
-TRX&(USDT-TRC20): THnoBdGW8W8tkCgATAbfTtEWV7jH3dz1dZ
-
+ - No
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/AikoCute/XrayR.svg)](https://starchart.cc/AikoCute/XrayR)
