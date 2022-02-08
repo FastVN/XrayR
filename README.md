@@ -52,7 +52,7 @@ Dự án này chỉ mang tính chất học tập, phát triển và bảo trì 
 ## Cài đặt phần mềm
 ### Một cài đặt chính
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/install.sh)
+Chưa hỗ trợ nhé - ( AikoCute Hột Me)
 ```
 ### Triển khai phần mềm bằng Docker
 [Hướng dẫn triển khai Docker](https://xrayr.aikocute.com/tai-xuong-va-cai-dat-xrayr/install/docker) 
