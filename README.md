@@ -56,3 +56,11 @@ Chưa hỗ trợ nhé - ( AikoCute Hột Me)
 ```
 đang update new
 ```
+### Tệp cấu hình và hướng dẫn chi tiết
+[Hướng dẫn chi tiết](https://xrayr.aikocute.com)
+## Telgram
+
+[AikoTelegram](https://t.me/aikocutehotme)
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/AikoCute/XrayR.svg)](https://starchart.cc/AikoCute/XrayR)
