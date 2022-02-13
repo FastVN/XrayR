@@ -13,7 +13,7 @@ Sử dụng hướng dẫn：[Hướng dẫn chi tiết](https://xrayr.aikocute.
 Dự án này chỉ mang tính chất học tập, phát triển và bảo trì của cá nhân tôi, tôi không đảm bảo tính khả dụng và tôi không chịu trách nhiệm về bất kỳ hậu quả nào do sử dụng phần mềm này.
 
 ## Đặc trưng
-* Mã nguồn mở vĩnh viễn và miễn phí.
+* Mã nguồn mở vĩnh viễn và miễn phí. < Bản china > Bản này tuỳ Tâm trạng vui buồn
 * Hỗ trợ nhiều giao thức V2ray, Trojan, Shadowsocks.
 * Hỗ trợ các tính năng mới như Vless và XTLS.
 * Hỗ trợ kết nối đơn lẻ với nhiều bảng và nút mà không cần khởi động lại.
