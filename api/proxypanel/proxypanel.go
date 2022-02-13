@@ -428,9 +428,7 @@ func (c *APIClient) ParseV2rayNodeResponse(nodeInfoResponse *json.RawMessage) (*
 	} else {
 		speedlimit = uint64((v2rayNodeInfo.SpeedLimit * 1000000) / 8)
 	}
-	if c.SpeedLimit == 0 && v2rayNodeInfo.SpeedLimit > 0 {
-		speedlimit = v2rayNodeInfo.SpeedLimit
-	}
+
 	if c.DeviceLimit == 0 && v2rayNodeInfo.ClientLimit > 0 {
 		c.DeviceLimit = v2rayNodeInfo.ClientLimit
 	}
@@ -441,7 +439,6 @@ func (c *APIClient) ParseV2rayNodeResponse(nodeInfoResponse *json.RawMessage) (*
 		NodeID:            c.NodeID,
 		Port:              v2rayNodeInfo.V2Port,
 		SpeedLimit:        speedlimit,
-		DeviceLimit:       v2rayNodeInfo.ClientLimit,
 		AlterID:           v2rayNodeInfo.V2AlterID,
 		TransportProtocol: v2rayNodeInfo.V2Net,
 		FakeType:          v2rayNodeInfo.V2Type,
