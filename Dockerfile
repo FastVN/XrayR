@@ -8,7 +8,7 @@ RUN go build -v -o XrayR -trimpath -ldflags "-s -w -buildid=" ./main
 
 # Release
 FROM  alpine
-# Cài đặt các bộ công cụ cần thiết
+# Cài đặt các bộ công cụ cần thiết < AIkoCute >
 RUN  apk --update --no-cache add tzdata ca-certificates \
     && cp /usr/share/zoneinfo/Asia/Ho_Chi_Minh  /etc/localtime
 RUN mkdir /etc/XrayR/
