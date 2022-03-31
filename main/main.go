@@ -24,7 +24,7 @@ var (
 
 var (
 	version  = "1.0.1"
-	codename = "Aiko - XrayR"
+	codename = "AikoXrayR"
 	intro    = "XrayR AikoCute HotMe"
 )
 
