@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/ZaloChat-@AikoCuteZalo-blue.svg)](https://zalo.me/g/tkhoxp474)
+[![](https://img.shields.io/badge/ZaloChat-@AikoCuteZalo-blue.svg)](https://zalo.me/0368629364)
 [![](https://img.shields.io/badge/TeleChat-@AikocuteTele-blue.svg)](https://t.me/aikocutehotme)
 
 Một khung phụ trợ Xray có thể dễ dàng hỗ trợ nhiều bảng.
