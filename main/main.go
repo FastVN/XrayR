@@ -24,8 +24,8 @@ var (
 
 var (
 	version  = "1.0.1"
-	codename = "AikoXrayR"
-	intro    = "XrayR AikoCuteHotMe"
+	codename = "Aiko - XrayR"
+	intro    = "XrayR AikoCute HotMe"
 )
 
 func showVersion() {
